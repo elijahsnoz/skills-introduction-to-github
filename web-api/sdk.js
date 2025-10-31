@@ -12,82 +12,178 @@ class DigitalCurrencySDK {
    * Create a new wallet
    */
   async createWallet(owner) {
-    const response = await fetch(`${this.apiUrl}/wallet/create`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ owner }),
-    });
-    return await response.json();
+    try {
+      const response = await fetch(`${this.apiUrl}/wallet/create`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ owner }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      return await response.json();
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message || 'Network request failed',
+      };
+    }
   }
 
   /**
    * Get wallet balance
    */
   async getBalance(address) {
-    const response = await fetch(`${this.apiUrl}/wallet/${address}/balance`);
-    return await response.json();
+    try {
+      const response = await fetch(`${this.apiUrl}/wallet/${address}/balance`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      return await response.json();
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message || 'Network request failed',
+      };
+    }
   }
 
   /**
    * Create a transaction
    */
   async createTransaction(from, to, amount) {
-    const response = await fetch(`${this.apiUrl}/transaction/create`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ from, to, amount }),
-    });
-    return await response.json();
+    try {
+      const response = await fetch(`${this.apiUrl}/transaction/create`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ from, to, amount }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      return await response.json();
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message || 'Network request failed',
+      };
+    }
   }
 
   /**
    * Mine pending transactions
    */
   async mine(minerAddress) {
-    const response = await fetch(`${this.apiUrl}/mine`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ minerAddress }),
-    });
-    return await response.json();
+    try {
+      const response = await fetch(`${this.apiUrl}/mine`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ minerAddress }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      return await response.json();
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message || 'Network request failed',
+      };
+    }
   }
 
   /**
    * Get blockchain
    */
   async getBlockchain() {
-    const response = await fetch(`${this.apiUrl}/blockchain`);
-    return await response.json();
+    try {
+      const response = await fetch(`${this.apiUrl}/blockchain`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      return await response.json();
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message || 'Network request failed',
+      };
+    }
   }
 
   /**
    * Validate blockchain
    */
   async validateBlockchain() {
-    const response = await fetch(`${this.apiUrl}/blockchain/validate`);
-    return await response.json();
+    try {
+      const response = await fetch(`${this.apiUrl}/blockchain/validate`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      return await response.json();
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message || 'Network request failed',
+      };
+    }
   }
 
   /**
    * Get stats
    */
   async getStats() {
-    const response = await fetch(`${this.apiUrl}/stats`);
-    return await response.json();
+    try {
+      const response = await fetch(`${this.apiUrl}/stats`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      return await response.json();
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message || 'Network request failed',
+      };
+    }
   }
 
   /**
    * Health check
    */
   async healthCheck() {
-    const response = await fetch(`${this.apiUrl}/health`);
-    return await response.json();
+    try {
+      const response = await fetch(`${this.apiUrl}/health`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      return await response.json();
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message || 'Network request failed',
+      };
+    }
   }
 }
 

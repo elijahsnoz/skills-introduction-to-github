@@ -82,13 +82,15 @@ class VRMarketplace {
     }
 
     // Create transaction
-    this.blockchain.createTransaction({
+    const transaction = {
       from: buyerAddress,
       to: item.seller,
       amount: item.price,
       itemId,
       timestamp: Date.now(),
-    });
+    };
+    
+    this.blockchain.createTransaction(transaction);
 
     item.sold = true;
     item.buyer = buyerAddress;

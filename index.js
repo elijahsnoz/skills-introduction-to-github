@@ -17,6 +17,9 @@ try {
   WebAPI = require('./web-api/api-server');
 } catch (err) {
   // Express not installed, WebAPI will not be available
+  if (err.code !== 'MODULE_NOT_FOUND') {
+    console.error('Error loading WebAPI:', err.message);
+  }
 }
 
 class DigitalCurrencyEcosystem {
