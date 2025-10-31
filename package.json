@@ -1,0 +1,28 @@
+{
+  "name": "digital-currency-ecosystem",
+  "version": "1.0.0",
+  "description": "Digital currency system for virtual reality and web applications",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-api": "node web-api/api-server.js",
+    "test": "echo \"Tests can be added here\" && exit 0"
+  },
+  "keywords": [
+    "blockchain",
+    "cryptocurrency",
+    "digital-currency",
+    "virtual-reality",
+    "vr",
+    "web3",
+    "smart-contracts"
+  ],
+  "author": "Digital Currency Ecosystem Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

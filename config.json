@@ -1,0 +1,40 @@
+{
+  "ecosystem": {
+    "name": "Digital Currency Ecosystem",
+    "version": "1.0.0",
+    "description": "Blockchain-based digital currency for VR and web applications"
+  },
+  "blockchain": {
+    "difficulty": 2,
+    "miningReward": 100,
+    "consensus": "proof-of-work",
+    "hashAlgorithm": "SHA-256"
+  },
+  "api": {
+    "port": 3000,
+    "cors": {
+      "enabled": true,
+      "origins": "*"
+    },
+    "rateLimit": {
+      "enabled": false,
+      "maxRequests": 100,
+      "windowMs": 900000
+    }
+  },
+  "vr": {
+    "sessionTimeout": 3600000,
+    "maxActiveSessions": 1000
+  },
+  "governance": {
+    "minVotingPeriod": 86400000,
+    "votingPowerDivisor": 100
+  },
+  "features": {
+    "smartContracts": true,
+    "governance": true,
+    "vrIntegration": true,
+    "webAPI": true,
+    "marketplace": true
+  }
+}
